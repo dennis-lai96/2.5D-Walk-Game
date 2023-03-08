@@ -22,9 +22,9 @@ class Example(tk.Frame):
         elif event.char == 'a':
             print("A was pressed")
         elif event.char=='s':
-            print("s was pressed")
+            print("S was pressed")
         elif event.char == 'd':
-            print("d was pressed")
+            print("D was pressed")
 
 if __name__ == "__main__":
     root = tk.Tk()
