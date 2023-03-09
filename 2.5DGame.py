@@ -1,5 +1,5 @@
 import tkinter as tk
-
+from PIL import ImageTk, Image
 class Example(tk.Frame):
     def __init__(self, parent):
         tk.Frame.__init__(self, parent, width=400,  height=400)
