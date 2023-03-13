@@ -1,21 +1,20 @@
 from tkinter import *
 from PIL import Image,ImageTk
-
+import json
 class GUI:
     def __init__(self,root):
         self.master = root
-        self.master.title("test")
+        self.master.title("2.5D Game")
 
-        self.img= ImageTk.PhotoImage(Image.open("images/loudly-crying-face_1f62d.png"))
+        self.img= ImageTk.PhotoImage(Image.open("images/A1-East.jpg"))
         self.label = Label(image=self.img)
         self.label.grid(row=0,column=0)
 
 
-
-        self.label.bind("<w>", self.keypress)
-        self.label.bind("<a>", self.keypress)
-        self.label.bind("<s>", self.keypress)
-        self.label.bind("<d>", self.keypress)
+        self.label.bind("<w>", self.keypress) #MOVES forward
+        self.label.bind("<a>", self.keypress)  #TURNS left
+        self.label.bind("<s>", self.keypress) #MOVES backward
+        self.label.bind("<d>", self.keypress) #TURNS right
         self.label.focus_set()
         self.label.bind("<1>", lambda event: self.label.focus_set())
 
