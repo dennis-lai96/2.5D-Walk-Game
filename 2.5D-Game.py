@@ -2,7 +2,6 @@ from tkinter import *
 from PIL import Image, ImageTk
 import json
 
-
 class GUI:
     def __init__(self, root):
         self.newPosition = None
@@ -55,8 +54,6 @@ class GUI:
             #Update image
             self.changeImg()
 
-
-
         elif event.char == 'a':
             print("A was pressed") #changes heading depending on the direction currently at
             if self.currentHeading== 'north': #will result in west
@@ -97,7 +94,6 @@ class GUI:
             #Code to change image here? Maybe it should be its own method?
             self.changeImg()
 
-
         elif event.char == 'd':
             print("D was pressed")
             if self.currentHeading== 'north': #will result in east
@@ -121,7 +117,6 @@ class GUI:
                 self.changeImg()
 
             print(self.currentHeading)
-
 
 if __name__ == '__main__':
     myTkRoot = Tk()
