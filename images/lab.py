@@ -18,6 +18,8 @@ except KeyError:
     print("XD")
 
 
+print('abc' == 'abc')
+
 print (string)
 
 

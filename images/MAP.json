@@ -13,7 +13,7 @@
     },
     "south": {
       "img": [
-        "images.A1-South.jpg"
+        "images/A1-South.jpg"
       ],
       "next-pos": [
         "(1,0)"
