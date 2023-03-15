@@ -1,23 +1,28 @@
 from tkinter import *
-from PIL import Image,ImageTk
+from PIL import Image, ImageTk
 import json
+
+
 class GUI:
-    def __init__(self,root):
+    def __init__(self, root):
         self.master = root
         self.master.title("2.5D Game")
 
-        self.img= ImageTk.PhotoImage(Image.open("images/A1-East.jpg"))
+        with open ("images/MAP.json") as f:
+            data = json.load(f)
+        string = (data['(0,0)']['east']['img'])
+        print(string[0])
+
+        self.img = ImageTk.PhotoImage(Image.open(string[0]))
         self.label = Label(image=self.img)
-        self.label.grid(row=0,column=0)
+        self.label.grid(row=0, column=0)
 
-
-        self.label.bind("<w>", self.keypress) #MOVES forward
-        self.label.bind("<a>", self.keypress)  #TURNS left
-        self.label.bind("<s>", self.keypress) #MOVES backward
-        self.label.bind("<d>", self.keypress) #TURNS right
+        self.label.bind("<w>", self.keypress)  # MOVES forward
+        self.label.bind("<a>", self.keypress)  # TURNS left
+        self.label.bind("<s>", self.keypress)  # MOVES backward
+        self.label.bind("<d>", self.keypress)  # TURNS right
         self.label.focus_set()
         self.label.bind("<1>", lambda event: self.label.focus_set())
-
 
     def keypress(self, event):  # this is how we'll register the key events
 
@@ -32,7 +37,6 @@ class GUI:
 
 
 if __name__ == '__main__':
-
     myTkRoot = Tk()
     my_gui = GUI(myTkRoot)
     myTkRoot.mainloop()
