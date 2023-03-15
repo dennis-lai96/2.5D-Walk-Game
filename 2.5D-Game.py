@@ -62,7 +62,19 @@ class GUI:
             print("A was pressed")
         elif event.char == 's':
             print("S was pressed")
+            #retrieves coordinates of new location
+            self.newPosition = self.data[self.currentPosition][self.currentHeading]['behind-pos']
+            print("Current position of is of type ", type(self.data[self.currentPosition]))
+            print("New location is ", self.newPosition[0])
+            print("New locations is of type ", type(self.newPosition[0]))
 
+            #updates the current position
+            self.currentPosition = self.newPosition[0]
+            string = self.newPosition[0]
+            self.currentPos = (self.data[string][self.currentHeading]['img'])
+
+            #Code to change image here? Maybe it should be its own method?
+            self.changeImg()
 
 
         elif event.char == 'd':
