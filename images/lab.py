@@ -18,6 +18,7 @@ except KeyError:
     print("XD")
 
 
+print (string)
 
 
 
